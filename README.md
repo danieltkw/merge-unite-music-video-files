@@ -49,12 +49,6 @@ It then calls the respective merging functions for audio and/or video files as n
 
 ### requirements.txt
 
-```plaintext
-pydub
-mutagen
-moviepy
-tqdm
-
-```sh
+```
 pip install pydub mutagen moviepy tqdm
 
