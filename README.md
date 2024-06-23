@@ -1,7 +1,5 @@
 
 
-# // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
-# ------------------------------------------------------------
 
 ## Function to merge audio or video files and preserve metadata
 
