@@ -47,6 +47,14 @@ It then calls the respective merging functions for audio and/or video files as n
 3. Run the script. Follow the prompts to specify your preferences for merging files.
 4. The merged file(s) will be saved in a timestamped results folder within the directory.
 
-This script provides a flexible solution for merging media files while maintaining important metadata, making it helpful in creating seamless audio playlists or video compilations.
+### requirements.txt
 
+```plaintext
+pydub
+mutagen
+moviepy
+tqdm
+
+```sh
+pip install pydub mutagen moviepy tqdm
 
