@@ -1,55 +1,54 @@
 
-# Media Merger Script
 
-## Purpose
+# // Daniel T. K. W. - github.com/danieltkw - danielkopolo95@gmail.com
+# ------------------------------------------------------------
 
-This Python script merges audio and video files into a single output file. It supports various audio formats (MP3, WAV, FLAC) and video formats (MP4, MOV, AVI) and preserves metadata for audio files.
+## Function to merge audio or video files and preserve metadata
 
-shell
-Copy code
+### Description
 
-## Requirements
+This script merges audio or video files while preserving metadata. It is designed to handle audio and video files, with user input to specify preferences for merging. The script leverages several libraries, including `pydub` for audio processing, `mutagen` for handling metadata, and `moviepy` for video processing.
 
-Python 3.6 or higher
-Libraries:
-pydub
-mutagen
-moviepy
-tqdm
-Install the required libraries using:
+### Functionality
 
-go
-Copy code
-```sh
-pip install pydub mutagen moviepy tqdm
-Usage
-markdown
-Copy code
-1. **Configure the Script:**
-   - Set the directory containing your media files.
-   - Optionally, modify the predefined list of files.
+#### 1. Imports and Setup
+The script imports necessary libraries for file manipulation, terminal operations, and multimedia processing.
 
-2. **Run the Script:**
-   ```sh
-   python merge_media.py
-Follow Prompts:
-Enter the desired name for the merged file or wait 5 seconds for a default name.
-Choose whether to use all files in the directory or a predefined list.
-If both audio and video files are present, choose to merge only audio, only video, or both.
-shell
-Copy code
+#### 2. Clearing the Terminal
+A function `clear_terminal()` is defined and called to clear the terminal screen.
 
-## Features
+#### 3. User Input with Timeout
+- `get_input_with_timeout(prompt, timeout=5)`: This function prompts the user for input, with a timeout feature to handle scenarios where the user does not respond in time.
+- `get_user_input(prompt)`: A simple function to get user input without a timeout.
 
-Supports Multiple Formats: Merges MP3, WAV, FLAC, MP4, MOV, and AVI files.
-Preserves Metadata: Retains metadata for MP3 files.
-User Interaction: Prompts for input to customize file merging.
-Progress Indicators: Displays progress bars for merging files and messages for export status.
-Timestamped Results: Saves merged files in a timestamped directory.
-shell
-Copy code
+#### 4. File and Directory Setup
+The script prompts the user to enter a name for the merged file, defaulting to a timestamped name if no input is given.
+The working directory and results folder are set up to store media files and the merged output.
 
-## Limitations
+#### 5. File Selection
+The user is prompted to decide whether to use all files in the directory or predefined files for merging.
 
-Export Time: Exporting large files may take additional time after the progress bar completes.
-Format-Specific Handling: Only MP3 metadata is preserved. Other formats may not retain metadata.
+#### 6. File Classification
+The script separates the selected files into audio and video categories.
+
+#### 7. Merge Options
+If both audio and video files are present, the user is asked whether they want to merge only audio, only video, or both.
+
+#### 8. Merging Functions
+- `merge_audio_files(audio_files, output_name)`: This function merges the selected audio files and preserves metadata from the first audio file.
+- `merge_video_files(video_files, output_name)`: This function merges the selected video files into a single video clip.
+
+#### 9. Execution
+The script determines the appropriate output file name based on the merged content type.
+It then calls the respective merging functions for audio and/or video files as needed.
+
+### Usage
+
+1. Ensure you have the required libraries installed (`pydub`, `mutagen`, `moviepy`, `tqdm`).
+2. Place your media files in the specified directory.
+3. Run the script. Follow the prompts to specify your preferences for merging files.
+4. The merged file(s) will be saved in a timestamped results folder within the directory.
+
+This script provides a flexible solution for merging media files while maintaining important metadata, making it helpful in creating seamless audio playlists or video compilations.
+
+
